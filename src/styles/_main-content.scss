@@ -1,0 +1,56 @@
+// heroes
+
+.main-content {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  z-index: 1;
+
+  .my-resume-open & {
+    opacity: 0;
+  }
+
+  h1 {
+    @include font($f-arvo, 86px, 900);
+    text-align: center;
+
+    @include mq($max-width: 510px) {
+        font-size: 44px;
+        line-height: 50px;
+    }
+  }
+  .blurb {
+    margin: 0 auto 10px;
+    overflow: auto;
+    width: 100%;
+    &__icon {
+      border: 3px solid $dark-purple;
+      border-radius: 100px;
+      display: block;
+      height: 50px;
+      margin: 50px auto;
+      padding: 22px;
+      text-align: center;
+      width: 50px;
+      i {
+        font-size: 45px;
+      }
+    }
+    &__text {
+      margin: 0 auto;
+      max-width: 500px;
+      text-align: center;
+      width: 100%;
+      h2 {
+        @include font($f-mont, 14px);
+        letter-spacing: 3px;
+        margin: 0 0 15px;
+        text-transform: uppercase;
+      }
+      p {
+        @include font($f-open, 14px, 400, 21px);
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

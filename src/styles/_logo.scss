@@ -1,0 +1,20 @@
+// logo
+
+.logo {
+  float: none !important;
+  height: 75px;
+  margin: 0 auto;
+  width: 75px;
+  h1 {
+    background: transparent url('./assets/images/logo-transparent.png') 0 0 no-repeat;
+    background-size: 100%;
+    height: 75px;
+    width: 75px;
+    a{
+      display: block;
+      height: inherit;
+      text-indent: -8400px;
+      width: inherit;
+    }
+  }
+}

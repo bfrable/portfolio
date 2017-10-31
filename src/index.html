@@ -1,24 +1,99 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue.js starter</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,900,700|Arvo:400,700,400italic,700italic|Montserrat:400,700|Open+Sans:400,600,300,700,800,300italic,400italic,600italic,700italic,800italic'
+    rel='stylesheet' type='text/css'>
+
+  <script src="https://use.fontawesome.com/6be425d835.js"></script>
+  <title>Brett Frable - Front End Developer</title>
 </head>
-<body>
-<a href="https://github.com/villeristi/vue.js-starter-template"><img style="position: fixed; top: 0; right: 0; border: 0; z-index:9999" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-<div id="app">
 
-  <navigation></navigation>
+<body class="document">
 
-  <loader v-show="isLoading"></loader>
+  <div id="app">
+
+    <div class="outer-wrapper">
+      <header>
+        <div class="wrapper">
+          <div class="logo">
+            <h1>
+              <a href="#">Brett Frable - Front End Developer</a>
+            </h1>
+          </div>
+
+        </div>
+      </header>
+
+      <section class="main-content">
+        <div class="wrapper">
+          <h1>Front End
+            <br>Developer</h1>
+          <div class="blurb">
+            <span class="blurb__icon">
+              <i class="fa fa-terminal"></i>
+            </span>
+            <div class="blurb__text">
+              <h2>About Me</h2>
+              <p>My name is Brett Frable. I bring a unique perspective to front end development and user interface design. Each
+                position I have held has transmuted my skill-set and goals towards forward-thinking technology. I am obsessed
+                with expanding my craft, solving challenging problems and staying on the bleeding edge.</p>
+            </div>
+          </div>
+          <!-- <div class="resume">
+            <div class="wrapper">
+              <span class="button button--purple js-resume">View my Resume</span>
+            </div>
+          </div> -->
+          <div class="icon-list">
+            <div class="wrapper">
+              <ul>
+                <li>
+                  <a href="http://github.com/bfrable" target="_blank">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://codepen.io/bfrable" target="_blank">
+                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a id="js-feed" href="#">
+                    <i class="fa fa-instagram ig-trigger" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.last.fm/user/brettfrable" target="_blank">
+                    <i class="fa fa-lastfm" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:brett@brettfrable.com" target="_blank">
+                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <instagram></instagram>
+    <background></background>
+
+    <!-- <loader v-show="isLoading"></loader>
 
   <div class="container">
     <router-view></router-view>
+  </div> -->
   </div>
-</div>
 
 </body>
+
 </html>

@@ -4,6 +4,8 @@ import VueRouter from 'vue-router';
 import { LoadingState } from 'src/config/loading-state';
 import Navigation from 'components/Navigation/navigation';
 import Loader from 'components/Loader/loader';
+import Instagram from 'components/Instagram/instagram';
+import Background from 'components/Background/background';
 
 Vue.use(VueRouter);
 
@@ -21,7 +23,9 @@ new Vue({
   router,
   components: {
     Navigation,
-    Loader
+    Loader,
+    Instagram,
+    Background
   },
 
   data(){

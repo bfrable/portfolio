@@ -1,0 +1,23 @@
+.button {
+    @include font($f-open, 17px);
+    @include transition(.3s);
+    border-radius: 4px;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 35px auto 30px;
+    max-width: 200px;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    &--purple {
+        background: $purple;
+        border: 3px solid $dark-purple;
+        &:hover {
+            background: $dark-purple;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+// profile photo
+.profile-photo {
+  background-image: linear-gradient(transparent, $dark-purple);
+  box-sizing: border-box;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: -25px;
+  width: 100%;
+  z-index: -1;
+}

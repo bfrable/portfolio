@@ -1,0 +1,48 @@
+.my-resume {
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+
+  .my-resume-open & {
+    display: block;
+    z-index: 5;
+  }
+
+  .wrapper {
+    max-width: 940px;
+  }
+
+  &__content {
+    text-align: left;
+    margin-top: 200px;
+  }
+
+  &__title {
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+  }
+
+  &__contact {
+    @include font($size: 14px, $weight: 100);
+    a {
+      color: $yellow;
+    }
+  }
+
+  &__section {
+    margin: 50px 0;
+    h3 {
+      @include font($family: $f-arvo, $size: 18px, $weight: 400);
+    }
+
+    p {
+      @include font($size: 14px, $weight: 100);
+    }
+  }
+}

@@ -1,0 +1,86 @@
+// base styles
+
+/* Space out content a bit */
+body {
+  @include font();
+}
+
+html, body {
+  height: 100%;
+}
+
+.outer-wrapper {
+    position: relative;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1500px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+canvas {
+  position: absolute;
+  z-index: 0;
+
+  .my-resume-open & {
+    z-index: 4;
+  }
+}
+
+.background {
+  @include transition(.3s);
+  background-image: linear-gradient($red 20%, $purple 80%);
+  height: 100%;
+  opacity: 0.81;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  .my-resume-open & {
+    background-image: linear-gradient($dark-purple 20%, $purple 80%);
+    opacity: 1;
+  }
+}
+
+.background-2 {
+  @include transition(.3s);
+  background: transparent url('./assets/images/space.jpg') 0 no-repeat;
+  background-size: cover;
+  height: 100%;
+  opacity: 0.145;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  .my-resume-open & {
+    opacity: 0.04;
+  }
+}
+
+.background-3 {
+  @include transition(.3s);
+  background: transparent url('./assets/images/profile-photo.jpg') top no-repeat;
+  background-size: cover;
+  height: 100%;
+  opacity: 0.18;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  .my-resume-open & {
+    opacity: 0;
+  }
+}
+
+.row {
+  &.row-collapse {
+      .column {
+          padding: 0;
+      }
+  }
+  &--full {
+      max-width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+.icon-list {
+    display: block;
+    font-size: 35px;
+    height: 100px;
+    margin: 40px auto 0;
+    max-width: 500px;
+    text-align: center;
+
+    li {
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 5px;
+    }
+
+    a {
+        @include transition(.2s);
+        color: $white;
+        &:hover {
+            color: $darker-purple;
+        }
+    }
+}

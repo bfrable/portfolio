@@ -1,0 +1,19 @@
+// header
+
+header {
+  margin: 20px 0 0;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+
+  .my-resume-open & {
+    z-index: 10;
+  }
+
+  .logo {
+    float: left;
+  }
+  .nav-toggle {
+    float: right;
+  }
+}

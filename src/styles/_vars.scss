@@ -1,0 +1,21 @@
+// colors
+$white:         #FFFFFF;
+$black:         #2C2C2C;
+$black-text:    #212121;
+$purple:        #8A72B6;
+$dark-purple:   #7F67AB;
+$darker-purple: #434350;
+$yellow:        #FFC80A;
+$yellow2:       #FBC52B;
+$orange:        #F05638;
+$red:           #FC544E;
+$light-blue:    #94B6B7;
+$med-blue:      #58dddf;
+
+
+@mixin vert-center {
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column; /* column | row */
+}

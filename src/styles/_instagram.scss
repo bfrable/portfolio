@@ -1,0 +1,182 @@
+.ig-feed{
+    @include transition(.7s);    
+    // display: none;
+    left: 0;    
+    position: absolute;
+    top: 0;    
+    width: 100%;
+    z-index: 9;
+    
+    &__photo {
+        @include transition;
+        height: 275px;
+        opacity: 0;        
+        overflow: hidden;
+        position: relative;
+
+        @include mq($max-width: 800px) {
+            height: 125px;
+        }
+
+        @include mq($max-width: 600px) {
+            height: 75px;
+        }
+
+        &.visible {
+            opacity: 0.9;
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        @include mq($max-width: 600px) {
+            &:nth-child(29), &:nth-child(30) {
+                display: none;
+            }    
+        }
+
+        img {
+            height: 300px;            
+            left: 0;            
+            object-fit: cover;            
+            top: 0;
+            width: 100%;
+    
+            @include mq($max-width: 800px) {
+                height: 150px;                
+                width: 100%;
+            }
+    
+            @include mq($max-width: 600px) {
+                height: 100px;                
+                width: 100%;
+            }
+        }
+    }
+
+    &__toolbar {
+        @include transition(.3s);
+        background: $darker-purple;
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+        box-sizing: border-box;
+        left: 0;        
+        overflow: auto;
+        padding: 10px;
+        position: fixed;        
+        top: -52px;        
+        width: 100%;
+        z-index: 5;
+
+        @include mq($max-width: 600px) {
+            bottom: -52px;
+            top: auto;
+        }
+
+        .ig-feed-open & {
+            border-radius: 4px;
+            left: 0;            
+            margin: 0 auto;            
+            right: 0;            
+            top: 20px;
+            width: 97%;
+
+            @include mq($max-width: 600px) {
+                bottom: 20px;
+                top: auto;
+            }
+        }
+
+        a {
+            @include transition(.2s);
+        }
+    }
+
+    &__follow {
+        float: left;
+        a {
+            border: 2px solid $white;
+            border-radius: 4px;
+            color: $white;
+            display: inline-block;                
+            font-size: 14px;
+            padding: 0 15px;                
+            text-transform: lowercase;
+            text-decoration: none;
+
+            &:hover {
+                background: $white;
+                color: $darker-purple;
+            }
+        }
+    }
+
+    &__close {
+        float: right;
+
+        a {
+            color: $white;
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+
+    &__photos {
+        @include mq($max-width: 600px) {
+            position: fixed;
+        }
+    }
+
+    &__active-photo {
+        @include transition(.2s);
+        background: $light-blue;        
+        border-radius: 4px;        
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);    
+        box-sizing: border-box;        
+        height: auto;        
+        left: 0;        
+        margin: 0 auto;        
+        max-width: 500px;        
+        position: absolute;
+        right: 0;        
+        top: -300px;        
+        width: 97%;
+        z-index: 9;
+    
+        &.open {
+            top: 80px;
+            
+            @include mq($max-width: 600px) {
+                height: 100%;
+                position: fixed;                
+                right: 0;
+                top: 0;
+                width: 100%;
+            }    
+        }
+    
+        img {
+            display: inherit;
+            width: 100%;
+    
+            @include mq($max-width: 600px) {
+                height: 100%;                
+                position: absolute;
+                width: auto;
+            }
+        }
+    }
+
+    &__close-active-photo {
+        background: $orange;            
+        padding: 6px 10px 8px;            
+        position: absolute;
+        right: 0;            
+        top: 0;
+
+        @include mq($max-width: 600px) {
+            left: 0;                
+            right: auto;
+        }
+    }
+}

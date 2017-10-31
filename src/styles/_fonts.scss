@@ -1,0 +1,15 @@
+// fonts
+
+$f-play: 'Playfair Display', serif;
+$f-arvo: 'Arvo', serif;
+$f-mont: 'Montserrat', sans-serif;
+$f-open: 'Open Sans', sans-serif;
+
+@mixin font($family: $f-open, $size: 22px, $weight: 400, $lh: $size, $color: $white) {
+  color: $color;
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: .5px;
+  line-height: $lh + 5;
+}
