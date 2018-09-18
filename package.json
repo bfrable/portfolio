@@ -16,7 +16,7 @@
     "url": "git@github.com:villeristi/vue.js-starter-template.git"
   },
   "config": {
-    "port": 3000
+    "port": "process.env.PORT||'3000'"
   },
   "scripts": {
     "start": "webpack-dashboard -c magenta -t 'Vue.js-Starter-Template' -- webpack-dev-server --config webpack/development.js --progress --hot",
