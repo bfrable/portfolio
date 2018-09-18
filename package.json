@@ -21,7 +21,8 @@
   "scripts": {
     "start": "webpack-dashboard -c magenta -t 'Vue.js-Starter-Template' -- webpack-dev-server --config webpack/development.js --progress --hot",
     "build": "webpack --config webpack/production.js -p --progress",
-    "lint:js": "eslint src"
+    "lint:js": "eslint src",
+    "heroku-prebuild": "yarn install --production=false"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
