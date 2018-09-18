@@ -34,9 +34,11 @@
     "font-awesome": "^4.7.0",
     "reset-css": "^2.2.1",
     "sass-mediaqueries": "^1.6.1",
+    "spotify-web-api-node": "^3.1.1",
     "vee-validate": "^2.0.0-rc.5",
     "vue": "^2.3.4",
-    "vue-router": "^2.5.3"
+    "vue-router": "^2.5.3",
+    "vue-spotify": "^1.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

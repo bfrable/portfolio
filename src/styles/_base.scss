@@ -1,3 +1,43 @@
+@mixin imgGlitch($name, $intensity, $width, $height, $top, $left) {
+
+  $steps: $intensity;
+
+  // Ensure the @keyframes are generated at the root level
+  @at-root {
+    // We need two different ones
+    @for $i from 1 through 2 {
+      @keyframes #{$name}-anim-#{$i} {
+        @for $i from 0 through $steps {
+          #{percentage($i*(1/$steps))} {
+            clip: rect(
+                random($height)+px,
+                $width+px,
+                random($height)+px,
+                0
+            );
+          }
+        }
+      }
+    }
+  }
+
+  position: absolute;
+  top: $top+px;
+  left: $left+px;
+  &:nth-child(2),
+  &:nth-child(3){
+    clip: rect(0, 0, 0, 0);
+  }
+  &:nth-child(2) {
+    left: ($left) + px;
+    animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
+  }
+  &:nth-child(3) {
+    left: ($left) + px;
+    animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
+  }
+}
+
 // base styles
 
 /* Space out content a bit */
@@ -23,54 +63,36 @@ html, body {
 canvas {
   position: absolute;
   z-index: 0;
+}
 
-  .my-resume-open & {
-    z-index: 4;
-  }
+.background, .background-2, .background-3 {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 .background {
   @include transition(.3s);
   background-image: linear-gradient($red 20%, $purple 80%);
-  height: 100%;
   opacity: 0.81;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-
-  .my-resume-open & {
-    background-image: linear-gradient($dark-purple 20%, $purple 80%);
-    opacity: 1;
-  }
 }
 
 .background-2 {
   @include transition(.3s);
   background: transparent url('./assets/images/space.jpg') 0 no-repeat;
   background-size: cover;
-  height: 100%;
   opacity: 0.145;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-
-  .my-resume-open & {
-    opacity: 0.04;
-  }
 }
 
 .background-3 {
   @include transition(.3s);
   background: transparent url('./assets/images/profile-photo.jpg') top no-repeat;
   background-size: cover;
-  height: 100%;
-  opacity: 0.18;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
+  opacity: 0.07;
 
-  .my-resume-open & {
-    opacity: 0;
+  &.is-glitch {
+    @include imgGlitch("glitch", 700, 1500, 1000, 58, 0);
   }
 }
 

@@ -1,10 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
-import { LoadingState } from 'src/config/loading-state';
-import Navigation from 'components/Navigation/navigation';
-import Loader from 'components/Loader/loader';
-import Instagram from 'components/Instagram/instagram';
 import Background from 'components/Background/background';
 
 Vue.use(VueRouter);
@@ -22,21 +17,6 @@ export const router = new VueRouter({
 new Vue({
   router,
   components: {
-    Navigation,
-    Loader,
-    Instagram,
     Background
-  },
-
-  data(){
-    return {
-      isLoading: false
-    };
-  },
-
-  created(){
-    LoadingState.$on('toggle', (isLoading) => {
-      this.isLoading = isLoading;
-    });
   }
 }).$mount('#app');

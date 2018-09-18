@@ -11,7 +11,7 @@
   }
 
   h1 {
-    @include font($f-arvo, 86px, 900);
+    @include font($f-arvo, 55px, 900);
     text-align: center;
 
     @include mq($max-width: 510px) {
@@ -24,11 +24,12 @@
     overflow: auto;
     width: 100%;
     &__icon {
-      border: 3px solid $dark-purple;
+      border: 3px solid $yellow;
       border-radius: 100px;
+      color: $darker-purple;
       display: block;
       height: 50px;
-      margin: 50px auto;
+      margin: 20px auto;
       padding: 22px;
       text-align: center;
       width: 50px;

@@ -3,27 +3,28 @@ import template from './background.html';
 
 export default Vue.extend({
   template,
-  
+
   mounted: function() {
     let ctx, circles, animateHeader = true;
-    
+
         const body   = document.body;
         const html   = document.documentElement;
-    
+
         let height   = Math.max( body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
         let width    = document.body.clientWidth;
-    
+
         const els = {
-            bg1:  this.$el.querySelector('.background1'),
-            bg2:  this.$el.querySelector('.background2'),
-            bg3:  this.$el.querySelector('.background3'),
+            bg1:  this.$el.querySelector('.background'),
+            bg2:  this.$el.querySelector('.background-2')
         };
-    
+
+        const bg3 = this.$el.querySelectorAll('.background-3');
+
         const canvas = this.$el.querySelector('.canvas');
-    
+
         function Circle() {
             var _this = this;
-    
+
             let init = () => {
                 _this.pos.x = Math.random()*width;
                 _this.pos.y = height+Math.random()*100;
@@ -31,12 +32,12 @@ export default Vue.extend({
                 _this.scale = 0.1+Math.random()*0.15;
                 _this.velocity = Math.random()*5.8;
             }
-    
+
             (() => {
                 _this.pos = {};
                 init();
             })();
-    
+
             this.draw = () => {
                 if(_this.alpha <= 0) {
                     init();
@@ -49,20 +50,34 @@ export default Vue.extend({
                 ctx.fill();
             };
         }
-    
+
         const resize = () => {
-            var width = document.body.clientWidth;
-            let height   = Math.max( body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-            
-            console.log(html.clientHeight);
+            let width  = document.body.clientWidth;
+            let height = Math.max( body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 
             Object.keys(els).forEach(function(key) {
-                els[key].style.height = height+'px';
+                els[key].style.height = 100+'%';
             });
-    
+
+            Object.keys(bg3).forEach(function(key) {
+              bg3[key].style.height = 100+'%';
+            });
+
             canvas.width = width;
-            canvas.height = height;     
-        }
+            canvas.height = 0;
+
+            setTimeout(function() {
+              Object.keys(els).forEach(function(key) {
+                els[key].style.height = height+'px';
+              });
+
+              Object.keys(bg3).forEach(function(key) {
+                bg3[key].style.height = height +'px';
+              });
+
+              canvas.height = height;
+            }, 500)
+        };
 
         const animate = () => {
             if(animateHeader) {
@@ -71,23 +86,27 @@ export default Vue.extend({
                     circles[i].draw();
                 }
             }
-    
+
             requestAnimationFrame(animate);
         }
-    
+
         let initParticles = () => {
-    
+
             Object.keys(els).forEach(function(key) {
                 els[key].style.height = height+'px';
             });
-    
-            canvas.width = width;
+
+            Object.keys(bg3).forEach(function(key) {
+              bg3[key].style.height = height +'px';
+            });
+
+          canvas.width = width;
             canvas.height = height;
 
             ctx = canvas.getContext('2d');
-    
+
             circles = [];
-            
+
             for(var x = 0; x < width*0.3; x++) {
                 var c = new Circle();
                 circles.push(c);
@@ -95,16 +114,16 @@ export default Vue.extend({
 
             animate();
         }
-    
+
         const addListeners = () => {
             window.addEventListener('resize', resize);
         }
-    
+
         const init = () => {
             initParticles();
             addListeners();
         }
-    
+
         init();
   }
 });

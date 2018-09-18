@@ -16,82 +16,10 @@
 <body class="document">
 
   <div id="app">
-
-    <div class="outer-wrapper">
-      <header>
-        <div class="wrapper">
-          <div class="logo">
-            <h1>
-              <a href="#">Brett Frable - Front End Developer</a>
-            </h1>
-          </div>
-
-        </div>
-      </header>
-
-      <section class="main-content">
-        <div class="wrapper">
-          <h1>Front End
-            <br>Developer</h1>
-          <div class="blurb">
-            <span class="blurb__icon">
-              <i class="fa fa-terminal"></i>
-            </span>
-            <div class="blurb__text">
-              <h2>About Me</h2>
-              <p>My name is Brett Frable. I bring a unique perspective to front end development and user interface design. Each
-                position I have held has transmuted my skill-set and goals towards forward-thinking technology. I am obsessed
-                with expanding my craft, solving challenging problems and staying on the bleeding edge.</p>
-            </div>
-          </div>
-          <!-- <div class="resume">
-            <div class="wrapper">
-              <span class="button button--purple js-resume">View my Resume</span>
-            </div>
-          </div> -->
-          <div class="icon-list">
-            <div class="wrapper">
-              <ul>
-                <li>
-                  <a href="http://github.com/bfrable" target="_blank">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="http://codepen.io/bfrable" target="_blank">
-                    <i class="fa fa-codepen" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a id="js-feed" href="#">
-                    <i class="fa fa-instagram ig-trigger" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="http://www.last.fm/user/brettfrable" target="_blank">
-                    <i class="fa fa-lastfm" aria-hidden="true"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:brett@brettfrable.com" target="_blank">
-                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div class="container">
+      <router-view></router-view>
+      <background></background>
     </div>
-
-    <instagram></instagram>
-    <background></background>
-
-    <!-- <loader v-show="isLoading"></loader>
-
-  <div class="container">
-    <router-view></router-view>
-  </div> -->
   </div>
 
 </body>

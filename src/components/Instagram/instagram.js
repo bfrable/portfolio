@@ -2,6 +2,9 @@ import Vue from 'vue';
 import axios from 'axios-jsonp-pro';
 import template from './instagram.html';
 
+import Spotify from 'spotify-web-api-node'
+import VueSpotify from 'vue-spotify'
+
 export default Vue.extend({
   template,
 
@@ -31,11 +34,11 @@ export default Vue.extend({
     getPhotos() {
         this.feed.style.display = 'block';
         this.feed.style.opacity = 1;
-  
+
         axios.jsonp(this.endpoint)
           .then(data => {
             let items = data.data;
-  
+
             items.forEach((item) => {
               this.images.push(item.images.standard_resolution.url);
             });
@@ -46,12 +49,12 @@ export default Vue.extend({
             this.loadPhotos();
             this.animatePhotos(150);
             this.displayActivePhoto();
-  
+
             this.closeFeed.addEventListener('click', (e) => {
               this.hidePhotos();
               e.preventDefault();
             });
-  
+
             this.closePhoto.addEventListener('click', () => {
               if (this.activePhoto) {
                 this.closeActivePhoto();
@@ -77,14 +80,14 @@ export default Vue.extend({
             setTimeout(() => {
                 photo[i].className += ' visible animated fadeInLeftBig';
             }, 500 + (i * time));
-        }       
+        }
     },
     displayPhotos() {
         setTimeout(() => {
             document.body.className += ' ig-feed-open';
         }, 1000);
 
-        this.getPhotos();    
+        this.getPhotos();
     },
     displayActivePhoto() {
         let photo = this.$el.querySelectorAll('.js-ig-photo');
@@ -101,12 +104,12 @@ export default Vue.extend({
                     this.ig.activeImgCont.innerHTML = `<img src="${imgSrc}" />`;
                 }
             });
-        }      
+        }
     },
     closeActivePhoto() {
         this.activePhoto = false;
         this.activeImgCont.innerHTML = '';
-        this.activePhotoCont.classList.remove('open');      
+        this.activePhotoCont.classList.remove('open');
     },
     hidePhotos() {
         this.feed.style.opacity = 0;
@@ -124,10 +127,12 @@ export default Vue.extend({
     },
     init() {
 
+        Vue.use(VueSpotify, new Spotify())
+
         this.trigger.addEventListener('click', (e) => {
             this.displayPhotos();
             e.preventDefault();
-        });  
+        });
     }
   }
 });

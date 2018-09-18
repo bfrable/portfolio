@@ -9,15 +9,18 @@
     letter-spacing: 1px;
     margin: 35px auto 30px;
     max-width: 200px;
-    padding: 15px 20px;
+    padding: 14px 5px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    &--purple {
-        background: $purple;
-        border: 3px solid $dark-purple;
+    &--yellow {
+        background: $yellow;
+        border: 3px solid $yellow;
+        color: $darker-purple;
         &:hover {
-            background: $dark-purple;
+          background: $darker-purple;
+          border: 3px solid $darker-purple;
+          color: $white;
         }
     }
 }
